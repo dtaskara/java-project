@@ -1,0 +1,44 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Username</th>
+    <th scope="col">Email</th>
+    <th scope="col">
+      <button type="button" class="btn btn-primary">Add</button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let u of users; let i = index;">
+    <th scope="row">{{i+1}}</th>
+    <td>{{u.name}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.email}}</td>
+    <td>
+      <button type="button" class="btn btn-primary"><i class="fas fa-pen"></i>&nbsp;Edit</button>&nbsp;
+      <button type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <span class="page-link">
+        2
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

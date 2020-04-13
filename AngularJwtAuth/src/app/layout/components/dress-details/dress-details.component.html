@@ -1,0 +1,23 @@
+<div *ngIf="dress">
+  <div>
+    <label>Title: </label> {{dress.title}}
+  </div>
+  <div>
+    <label>Country: </label> {{dress.country}}
+  </div>
+  <div>
+    <label>Length: </label> {{dress.length}}
+  </div>
+  <div>
+    <label>Description: </label> {{dress.description}}
+  </div>
+  <div>
+    <label>Price: </label> {{dress.price}}
+  </div>
+
+  <span class="button is-small btn-primary" (click)='updateDress()'>Update</span>
+
+  <span class="button is-small btn-danger" (click)='deleteDress()'>Delete</span>
+
+  <hr/>
+</div>

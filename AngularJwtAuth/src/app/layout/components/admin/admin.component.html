@@ -1,0 +1,19 @@
+<div style="margin-top: 10px;">
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab">
+      <a class="nav-item nav-link {{TAB.USERS ? 'active' : ''}}" id="users-tab" role="tab" data-toggle="tab" href="admin#users" (click)="tabSelection('users')" aria-controls="users" aria-selected="true">Users</a>
+      <a class="nav-item nav-link {{TAB.PRODUCTS ? 'active' : ''}}" id="products-tab" role="tab" data-toggle="tab" href="admin#products" (click)="tabSelection('products')" aria-controls="products" aria-selected="false">Products</a>
+    </div>
+  </nav>
+
+  <div class="tab-content" id="nav-tabContent">
+    <div *ngIf="TAB.USERS" class="tab-pane fade {{TAB.USERS ? 'show active': ''}}" id="users" role="tabpanel" aria-labelledby="users-tab">
+      <app-user></app-user>
+    </div>
+    <div *ngIf="TAB.PRODUCTS" class="tab-pane fade {{TAB.PRODUCTS ? 'show active': ''}}" id="products" role="tabpanel" aria-labelledby="products-tab">
+      <app-dress-list></app-dress-list>
+    </div>
+  </div>
+
+</div>

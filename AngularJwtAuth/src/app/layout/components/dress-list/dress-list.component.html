@@ -1,0 +1,47 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Brand</th>
+    <th>Country</th>
+    <th>Length</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th scope="col">
+      <button type="button" class="btn btn-primary">Add</button>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let dress of dresses | async">
+    <td>{{dress.id}}</td>
+    <td>{{dress.title}}</td>
+    <td>{{dress.brand}}</td>
+    <td>{{dress.country}}</td>
+    <td>{{dress.length}}</td>
+    <td>{{dress.description}}</td>
+    <td>{{dress.price}}</td>
+    <td>
+      <button type="button" class="btn btn-primary" [routerLink]="'/edit/dress/' + dress.id">Edit</button>&nbsp;
+      <button type="button" class="btn btn-danger" (click)="deleteDress(dress.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <button class="page-link" (click)="loadData(selectedPage-1)" [disabled]="selectedPage === 1">Previous</button>
+    </li>
+    <li *ngFor="let p of pageCount"  class="page-item {{selectedPage === p ? 'active' : ''}}">
+      <button class="page-link" (click)="loadData(p)">{{p}}</button>
+    </li>
+    <li class="page-item">
+      <button class="page-link" (click)="loadData(selectedPage+1)" [disabled]="selectedPage === pageCount.length">Next</button>
+    </li>
+  </ul>
+</nav>
+
+
